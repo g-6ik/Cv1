@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Hanan Ali</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .cv-container {
+            max-width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Two Column Layout */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        /* Arabic Side */
+        .arabic-side {
+            direction: rtl;
+            font-family: 'Cairo', sans-serif;
+            padding: 30px;
+            border-left: 3px solid #667eea;
+            background: #fafafa;
+        }
+        
+        .arabic-side .section {
+            margin-bottom: 20px;
+        }
+        
+        .arabic-side .section-title {
+            font-size: 1.3em;
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .arabic-side .text-content {
+            line-height: 1.8;
+            color: #444;
+            text-align: justify;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+        
+        .arabic-side .experience-block {
+            margin-bottom: 15px;
+        }
+        
+        .arabic-side .job-header {
+            background: white;
+            padding: 10px;
+            border-right: 3px solid #764ba2;
+            border-radius: 5px;
+            margin-bottom: 8px;
+        }
+        
+        .arabic-side .company-name {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .arabic-side .job-title {
+            font-size: 0.95em;
+            color: #555;
+            margin: 3px 0;
+        }
+        
+        .arabic-side .period {
+            font-size: 0.85em;
+            color: #888;
+        }
+        
+        .arabic-side .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .arabic-side .skill-tag {
+            background: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            color: #667eea;
+            border: 1px solid #667eea;
+        }
+        
+        /* English Side */
+        .english-side {
+            padding: 30px;
+            background: white;
+        }
+        
+        .english-side .section {
+            margin-bottom: 20px;
+        }
+        
+        .english-side .section-title {
+            font-size: 1.3em;
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .english-side .text-content {
+            line-height: 1.8;
+            color: #444;
+            text-align: justify;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+        
+        .english-side .experience-block {
+            margin-bottom: 15px;
+        }
+        
+        .english-side .job-header {
+            background: #fafafa;
+            padding: 10px;
+            border-left: 3px solid #764ba2;
+            border-radius: 5px;
+            margin-bottom: 8px;
+        }
+        
+        .english-side .company-name {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .english-side .job-title {
+            font-size: 0.95em;
+            color: #555;
+            margin: 3px 0;
+        }
+        
+        .english-side .period {
+            font-size: 0.85em;
+            color: #888;
+        }
+        
+        .english-side .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .english-side .skill-tag {
+            background: #fafafa;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            color: #667eea;
+            border: 1px solid #667eea;
+        }
+        
+        .download-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #667eea;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            font-weight: 600;
+            border: none;
+            font-size: 1em;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .download-btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+            }
+            
+            .download-btn {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .cv-container {
+                height: auto;
+            }
+            
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .arabic-side {
+                border-left: none;
+                border-bottom: 3px solid #667eea;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="download-btn" onclick="window.print()">📥 Download PDF</button>
+    
+    <div class="cv-container">
+        <!-- Single Header in English -->
+        <div class="header">
+            <h1>HANAN ALI</h1>
+            <div class="contact-info">
+                <div class="contact-item">📍 Riyadh, Saudi Arabia</div>
+                <div class="contact-item">📱 +966 55 983 8087</div>
+                <div class="contact-item">✉️ hnan8988@gmail.com</div>
+            </div>
+        </div>
+        
+        <!-- Two Column Content -->
+        <div class="content-wrapper">
+            <!-- Arabic Side -->
+            <div class="arabic-side">
+                <div class="section">
+                    <h2 class="section-title">من أنا</h2>
+                    <p class="text-content">
+                        أنا محترفة مبيعات طموحة ولدي شغف كبير بخدمة العملاء وتحقيق التميز. أمتلك أكثر من 6 سنوات من الخبرة العملية في مجال التجزئة، حيث تعلمت كيفية بناء علاقات قوية مع العملاء وإدارة الفرق بفعالية. أؤمن بأن النجاح يأتي من التفاني في العمل والتطوير المستمر للذات.
+                    </p>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section-title">رحلتي المهنية</h2>
+                    
+                    <div class="experience-block">
+                        <div class="job-header">
+                            <div class="company-name">شركة الشايع</div>
+                            <div class="job-title">مساعد مدير متجر</div>
+                            <div class="period">2018 - 2024</div>
+                        </div>
+                        <p class="text-content">
+                            خلال عملي في شركة الشايع، ساعدت في إدارة العمليات اليومية للمتجر وقيادة فريق من الموظفين الموهوبين. كنت مسؤولة عن متابعة الأداء وتحفيز الفريق لتحقيق أهداف المبيعات. تعلمت كيفية التعامل مع التحديات اليومية وحل مشكلات العملاء بطريقة احترافية، مما ساهم في رفع مستوى رضا العملاء بشكل ملحوظ.
+                        </p>
+                    </div>
+                    
+                    <div class="experience-block">
+                        <div class="job-header">
+                            <div class="company-name">شركة الدانوب</div>
+                            <div class="job-title">كاشير</div>
+                            <div class="period">2017 - 2018</div>
+                        </div>
+                        <p class="text-content">
+                            بدأت رحلتي المهنية كاشير في شركة الدانوب، حيث تعلمت أساسيات خدمة العملاء والعمل تحت الضغط. كنت أتعامل مع مئات العملاء يومياً، وهذا علمني أهمية الدقة والسرعة في إنجاز المعاملات مع الحفاظ على الابتسامة والود.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section-title">تعليمي وتطويري</h2>
+                    <p class="text-content">
+                        حصلت على دبلوم تدريبي مهني في السلامة المهنية من جامعة الأميرة نورة. كما حرصت على تطوير مهاراتي من خلال حضور عدة دورات تدريبية مثل استراتيجيات التوجيه والضبط الذاتي، وفن التعامل مع الآخرين، وتفعيل مهارات التفكير في بيئة العمل.
+                    </p>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section-title">مهاراتي</h2>
+                    <div class="skills-list">
+                        <span class="skill-tag">التخطيط الاستراتيجي</span>
+                        <span class="skill-tag">حل المشكلات</span>
+                        <span class="skill-tag">إدارة الأزمات</span>
+                        <span class="skill-tag">التفكير الإبداعي</span>
+                        <span class="skill-tag">التفاوض</span>
+                        <span class="skill-tag">القيادة</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- English Side -->
+            <div class="english-side">
+                <div class="section">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="text-content">
+                        I am an ambitious sales professional with a deep passion for customer service and excellence. With over 6 years of hands-on experience in retail, I've learned how to build strong relationships with customers and effectively manage teams. I believe that success comes from dedication to work and continuous self-development.
+                    </p>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section-title">My Professional Journey</h2>
+                    
+                    <div class="experience-block">
+                        <div class="job-header">
+                            <div class="company-name">Alshaya Group</div>
+                            <div class="job-title">Assistant Store Manager</div>
+                            <div class="period">2018 - 2024</div>
+                        </div>
+                        <p class="text-content">
+                            During my time at Alshaya Group, I helped manage the daily operations of the store and lead a team of talented employees. I was responsible for monitoring performance and motivating the team to achieve sales targets. I learned how to handle daily challenges and resolve customer issues professionally, which significantly improved customer satisfaction levels.
+                        </p>
+                    </div>
+                    
+                    <div class="experience-block">
+                        <div class="job-header">
+                            <div class="company-name">Danube Company</div>
+                            <div class="job-title">Cashier</div>
+                            <div class="period">2017 - 2018</div>
+                        </div>
+                        <p class="text-content">
+                            I started my professional journey as a cashier at Danube Company, where I learned the fundamentals of customer service and working under pressure. I dealt with hundreds of customers daily, which taught me the importance of accuracy and speed in completing transactions while maintaining a smile and friendly demeanor.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section-title">Education & Development</h2>
+                    <p class="text-content">
+                        I earned a vocational training diploma in Occupational Safety from Princess Nourah University. I also focused on developing my skills by attending several training courses such as Directed and Self-Control Strategies, The Art of Dealing with Others, and Activating Thinking Skills in the Workplace.
+                    </p>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section-title">My Skills</h2>
+                    <div class="skills-list">
+                        <span class="skill-tag">Strategic Planning</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Crisis Management</span>
+                        <span class="skill-tag">Creative Thinking</span>
+                        <span class="skill-tag">Negotiation</span>
+                        <span class="skill-tag">Leadership</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
